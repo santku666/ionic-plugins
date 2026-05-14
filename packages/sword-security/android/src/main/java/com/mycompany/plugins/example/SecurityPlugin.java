@@ -1,5 +1,7 @@
 package com.mycompany.plugins.example;
 
+import android.content.Intent;
+import android.provider.Settings;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -7,10 +9,8 @@ import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import java.io.File;
 
-@CapacitorPlugin(name = "Security")
+@CapacitorPlugin(name = "SecurityPlugin")
 public class SecurityPlugin extends Plugin {
-
-    private Security implementation = new Security();
 
     @PluginMethod
     public void isDeveloperModeEnabled(PluginCall call) {
