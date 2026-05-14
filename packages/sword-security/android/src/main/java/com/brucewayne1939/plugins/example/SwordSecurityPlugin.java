@@ -1,4 +1,4 @@
-package com.mycompany.plugins.example;
+package com.brucewayne1939.swordsecurity;
 
 import android.content.Intent;
 import android.provider.Settings;
@@ -9,8 +9,8 @@ import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import java.io.File;
 
-@CapacitorPlugin(name = "SecurityPlugin")
-public class SecurityPlugin extends Plugin {
+@CapacitorPlugin(name = "SwordSecurityPlugin")
+public class SwordSecurityPlugin extends Plugin {
 
     @PluginMethod
     public void isDeveloperModeEnabled(PluginCall call) {

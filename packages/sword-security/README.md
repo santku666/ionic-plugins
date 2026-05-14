@@ -7,13 +7,13 @@ this plugin enables the app to use security features
 To use npm
 
 ```bash
-npm install sword-security
+npm install @brucewayne1939/sword-security
 ````
 
 To use yarn
 
 ```bash
-yarn add sword-security
+yarn add @brucewayne1939/sword-security
 ```
 
 Sync native files
@@ -27,7 +27,7 @@ npx cap sync
 Add the following to your `app.component.ts`:
 
 ```typescript
-import { Security } from 'sword-security';
+import { SwordSecurityPlugin } from '@brucewayne1939/sword-security';
 
 @Component({
   // ...
@@ -50,8 +50,8 @@ export class AppComponent implements OnInit {
 
   async checkDeviceSecurity() {
     try {
-      const rootResult = await Security.isRooted();
-      const devResult = await Security.isDeveloperModeEnabled();
+      const rootResult = await SwordSecurityPlugin.isRooted();
+      const devResult = await SwordSecurityPlugin.isDeveloperModeEnabled();
       console.log('Rooted:', rootResult.rooted);
       console.log('Developer Mode:', devResult.enabled);
 
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
               text: 'Open Settings',
               handler: async () => {
                 this.securityPopupOpen = false;
-                await Security.openDeveloperSettings();
+                await SwordSecurityPlugin.openDeveloperSettings();
               }
             }
           ]

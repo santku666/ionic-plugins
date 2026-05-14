@@ -1,8 +1,8 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { SecurityPlugin } from './definitions';
+import type { SwordSecurityPlugin } from './definitions';
 
-export class SecurityWeb extends WebPlugin implements SecurityPlugin {
+export class SecurityWeb extends WebPlugin implements SwordSecurityPlugin {
   async isDeveloperModeEnabled(): Promise<{ enabled: boolean }> {
     // Web implementation - developer mode is typically not applicable
     return { enabled: false };

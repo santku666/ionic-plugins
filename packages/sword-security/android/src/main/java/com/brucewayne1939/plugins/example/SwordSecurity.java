@@ -1,8 +1,8 @@
-package com.mycompany.plugins.example;
+package com.brucewayne1939.swordsecurity;
 
 import com.getcapacitor.Logger;
 
-public class Example {
+public class SwordSecurity {
 
     public String echo(String value) {
         Logger.info("Echo", value);

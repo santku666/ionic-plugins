@@ -1,10 +1,10 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { SecurityPlugin } from './definitions';
+import type { SwordSecurityPlugin } from './definitions';
 
-const SecurityPlugin = registerPlugin<SecurityPlugin>('SecurityPlugin', {
+const SwordSecurityPlugin = registerPlugin<SwordSecurityPlugin>('SwordSecurityPlugin', {
   web: () => import('./web').then((m) => new m.SecurityWeb()),
 });
 
 export * from './definitions';
-export { SecurityPlugin };
+export { SwordSecurityPlugin };
