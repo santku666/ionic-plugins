@@ -13,7 +13,7 @@ public class SecurityPlugin extends Plugin {
     private Security implementation = new Security();
 
     @PluginMethod
-        public void isDeveloperModeEnabled(PluginCall call) {
+    public void isDeveloperModeEnabled(PluginCall call) {
 
         boolean enabled =
             Settings.Global.getInt(
@@ -28,16 +28,38 @@ public class SecurityPlugin extends Plugin {
         call.resolve(ret);
     }
 
-@PluginMethod
-public void isRooted(PluginCall call) {
+    @PluginMethod
+    public void isRooted(PluginCall call) {
 
-    boolean rooted = checkRootMethod1() || checkRootMethod2();
+        boolean rooted = checkRootMethod1() || checkRootMethod2();
 
-    JSObject ret = new JSObject();
-    ret.put("rooted", rooted);
+        JSObject ret = new JSObject();
+        ret.put("rooted", rooted);
 
-    call.resolve(ret);
-}
+        call.resolve(ret);
+    }
+
+    private boolean isUsbDebuggingEnabled() {
+
+        return Settings.Global.getInt(
+                getContext().getContentResolver(),
+                Settings.Global.ADB_ENABLED,
+                0
+        ) == 1;
+    }
+
+    @PluginMethod
+    public void openDeveloperSettings(PluginCall call) {
+
+        Intent intent =
+            new Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        getContext().startActivity(intent);
+
+        call.resolve();
+    }        
 
 private boolean checkRootMethod1() {
     String buildTags = android.os.Build.TAGS;

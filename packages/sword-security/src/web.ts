@@ -12,4 +12,8 @@ export class SecurityWeb extends WebPlugin implements SecurityPlugin {
     // Web implementation - rooting is not applicable on web
     return { rooted: false };
   }
+
+  async openDeveloperSettings(): Promise<void> {
+    console.warn('Not supported on web');
+  }
 }
