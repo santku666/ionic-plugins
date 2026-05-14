@@ -1,6 +1,6 @@
 {
-  "name": "sword-security",
-  "version": "0.0.1",
+  "name": "@brucewayne/sword-security",
+  "version": "0.0.3",
   "description": "this plugin enables the app to use security features",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
