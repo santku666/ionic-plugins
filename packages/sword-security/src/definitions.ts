@@ -1,3 +1,4 @@
-export interface ExamplePlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+export interface SecurityPlugin {
+  isDeveloperModeEnabled(): Promise<{ enabled: boolean }>;
+  isRooted(): Promise<{ rooted: boolean }>;
 }

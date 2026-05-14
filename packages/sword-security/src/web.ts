@@ -1,10 +1,15 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { ExamplePlugin } from './definitions';
+import type { SecurityPlugin } from './definitions';
 
-export class ExampleWeb extends WebPlugin implements ExamplePlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+export class SecurityWeb extends WebPlugin implements SecurityPlugin {
+  async isDeveloperModeEnabled(): Promise<{ enabled: boolean }> {
+    // Web implementation - developer mode is typically not applicable
+    return { enabled: false };
+  }
+
+  async isRooted(): Promise<{ rooted: boolean }> {
+    // Web implementation - rooting is not applicable on web
+    return { rooted: false };
   }
 }
