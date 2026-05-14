@@ -1,5 +1,5 @@
 {
-  "name": "@brucewayne/sword-security",
+  "name": "@brucewayne1939/sword-security",
   "version": "0.0.3",
   "description": "this plugin enables the app to use security features",
   "main": "dist/plugin.cjs.js",
